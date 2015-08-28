@@ -54,26 +54,3 @@ class Conta{
 		setSaldo(getSaldo()-valor);
 	}
 }
-
-
-
-class TestaConta{
-	public static void main(String[] args) {
-		Conta conta = new Conta();
-		System.out.println("\n****** CONTA ******");
-		conta.setNome("Lucas");
-		System.out.println("titular: "+conta.getNome());
-		conta.setNumero(123456789);
-		conta.setDigito(0);
-		System.out.println("\nNúmero da conta: "+conta.getNumero()+"-"+conta.getDigito());
-		conta.setCpf("470/190/118-02");
-		conta.setEndereco("Rua Sao Pedro da Aldeia, 69.");
-		System.out.println("\nCpf: "+conta.getCpf()+"\nEndereço: "+conta.getEndereco());
-		conta.setSaldo(900);
-		System.out.println("\nSaldo: "+conta.getSaldo());
-		conta.deposita(200);
-		System.out.println("\nSaldo após depósito com bonus: "+conta.getSaldo());
-		conta.saca(50);
-		System.out.println("\nSaldo após o saque: "+conta.getSaldo());
-	}
-}
