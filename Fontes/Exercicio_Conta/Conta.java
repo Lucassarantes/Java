@@ -1,10 +1,10 @@
 class Conta{
-	String titular;
-	int numero;
-	int digito;
-	String cpf;
-	String endereco;
-	double saldo;
+	private String titular;
+	private int numero;
+	private int digito;
+	private String cpf;
+	private String endereco;
+	private double saldo;
 
 	void setNome(String nome){
 		this.titular = nome;
@@ -37,20 +37,32 @@ class Conta{
 		return this.endereco;
 	}
 	void setSaldo(double valor){
-		this.saldo = valor;
+		if (valor<0) {
+			System.out.println("Valor inválido.");
+		}else{
+			this.saldo = valor;
+		}
 	}
 	double getSaldo(){
 		return this.saldo;
 	}
 	void deposita(double valor){
-		if (valor<=100) {
-			valor = valor + (valor*0.1);
+		if (valor<0){
+			System.out.println("Valor inválido.");
 		}else{
-			valor = valor + (valor * 0.1);
+			if (valor<=100) {
+				valor = valor + (valor * 0.1);
+			}else{
+				valor = valor + (valor * 0.2);
+			}
 		}
 		setSaldo(getSaldo()+valor);
 	}
 	void saca(double valor){
-		setSaldo(getSaldo()-valor);
+		if (valor<0 || valor>getSaldo()) {
+			System.out.println("Valor inválido!");
+		}else{
+			setSaldo(getSaldo()-valor);
+		}
 	}
 }
