@@ -20,5 +20,6 @@ class TestaEmpresa{
 		empresa.adicionaFuncionario(funcionario2);
 
 		empresa.mostraFuncionarios();
+		System.out.println(empresa.contemFuncionario("Lucas"));
 	}
 }

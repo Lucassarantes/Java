@@ -29,4 +29,14 @@ class Empresa{
 			System.out.println(" Funcionário na posição: "+i);
 		}
 	}
+
+	boolean contemFuncionario(String funcionario){
+		for (int i=0; i<this.contador;i++) {
+			if (this.funcionario[i].getNomeDoFuncionario() == funcionario) {
+				System.out.println("Contem o fundionario: "+funcionario);
+				return true;
+			}
+		}
+		return false;
+	}
 }
