@@ -1,60 +1,44 @@
 class Casa{
 	String cor;
-	boolean porta1;
-	boolean porta2;
-	boolean porta3;
+	int totalDePortas;
+	Porta[] portas;
+	int contador = 0;
 
-	void setCor(String tinta){
-		this.cor = tinta;
+	void pinta(String cor){
+		this.cor = cor;
 	}
-	String getCor(){
+	String mostraCor(){
 		return this.cor;
 	}
+	void setPortas(int portas){
+		this.portas = new Porta[portas];
+		this.totalDePortas = portas;
+	}
 
-	void setPorta1(String porta){
-		if (porta.equalsIgnoreCase("aberta")) {
-			this.porta1 = true;
-		}else{
-			this.porta1 = false;
+	void adicionaPorta(){
+		if (this.contador<this.totalDePortas) {
+			this.portas[contador] = new Porta();
+			contador +=1;
 		}
 	}
-	boolean getPorta1(){
-		return this.porta1;
+
+	int getTotalDePortas(){
+		return this.totalDePortas;
 	}
 
-	void setPorta2(String porta){
-		if (porta.equalsIgnoreCase("aberta")) {
-			this.porta2 = true;
-		}else{
-			this.porta2 = false;
-		}
-	}
-	boolean getPorta2(){
-		return this.porta2;
-	}
-
-	void setPorta3(String porta){
-		if (porta.equalsIgnoreCase("aberta")) {
-			this.porta3 = true;
-		}else{
-			this.porta3 = false;
-		}
-	}
-	boolean getPorta3(){
-		return this.porta1;
-	}
-
-	int mostraQuantasPortasAbertas(){
+	int quantasPortasEstaoAbertas(){
 		int portasAbertas = 0;
-		if (this.getPorta1() == true) {
-			portasAbertas = portasAbertas + 1;
-		}
-		if (this.getPorta2() == true) {
-			portasAbertas = portasAbertas + 1;	
-		}
-		if (this.getPorta3() == true) {
-			portasAbertas = portasAbertas + 1;
+		for (int i = 0; i < contador; i++) {
+			if (this.portas[i].mostraEstadoDaPorta() == true) {
+				portasAbertas += 1;
+			}
 		}
 		return portasAbertas;
+	}
+
+	void mostraInformacoesDaCasa(){
+		System.out.println("A cor da casa é: "+mostraCor());
+		System.out.println("O total de portas da casa é: "+getTotalDePortas());
+		System.out.println("A quantidade de portas abertas na casa é: "+quantasPortasEstaoAbertas());
 	}
 }

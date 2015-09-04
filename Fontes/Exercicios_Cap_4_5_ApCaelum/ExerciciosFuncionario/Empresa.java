@@ -1,7 +1,12 @@
 class Empresa{
 	String nomeDaEmpresa;
+
 	String cnpj;
-	Funcionario[] funcionario = new Funcionario[10];
+
+	Funcionario[] funcionario = new Funcionario[3];
+
+	Funcionario[] funcionarios = new Funcionario[5];
+
 	int contador = 0;
 
 	void setNomeDaEmpresa(String nomeDaEmpresa){
@@ -19,14 +24,15 @@ class Empresa{
 	}
 
 	void adicionaFuncionario(Funcionario funcionario){
-		this.funcionario[contador] = funcionario;
-		contador += 1;
-	}
-	void mostraFuncionarios(){
-		for (int i = 0; i < contador; i++) {
-			System.out.println(" Informações do funcionário: \n");
-			funcionario[i].mostra();
-			System.out.println(" Funcionário na posição: "+i);
+		if(contador < this.funcionario.length) {
+			this.funcionario[contador] = funcionario;
+			contador += 1;
+		}else{
+			this.funcionarios[contador] = funcionario;
+			contador += 1;
+			for (int i = 0; i<this.funcionario.length; i++) {
+				this.funcionarios[i] = this.funcionario[i];
+			}
 		}
 	}
 
@@ -38,5 +44,21 @@ class Empresa{
 			}
 		}
 		return false;
+	}
+
+	void mostraFuncionarios(){
+		if (contador <= this.funcionario.length) {
+			for (int i = 0; i < contador; i++) {
+				System.out.println(" Informações do funcionário: \n");
+				funcionario[i].mostra();
+				System.out.println(" Funcionário na posição: "+i);
+			}
+		}else{
+			for (int i = 0; i < contador; i++) {
+				System.out.println(" Informações do funcionário: \n");
+				funcionarios[i].mostra();
+				System.out.println(" Funcionário na posição: "+i);
+			}
+		}
 	}
 }

@@ -2,12 +2,17 @@ class TestaCasa{
 	public static void main(String[] args) {
 		Casa casa = new Casa();
 
-		casa.setCor("Azul");
-		casa.setPorta1("aberta");
-		casa.setPorta2("fechada");
-		casa.setPorta3("aberta");
+		casa.pinta("Azul");
+		casa.setPortas(3);
 
-		System.out.println(casa.getCor());
-		System.out.println("O número de portas abertas é: "+casa.mostraQuantasPortasAbertas());
+		casa.adicionaPorta();
+		casa.adicionaPorta();
+		casa.adicionaPorta();
+
+		casa.portas[0].estadoPorta("aberta");
+		casa.portas[1].estadoPorta("fechada");
+		casa.portas[2].estadoPorta("aberta");
+
+		casa.mostraInformacoesDaCasa();
 	}
 }
