@@ -12,4 +12,5 @@ class Porta{
 	boolean mostraEstadoDaPorta(){
 		return this.estadoDaPorta;
 	}
+
 }

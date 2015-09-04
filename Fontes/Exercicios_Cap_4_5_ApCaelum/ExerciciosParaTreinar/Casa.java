@@ -10,6 +10,7 @@ class Casa{
 	String mostraCor(){
 		return this.cor;
 	}
+	
 	void setPortas(int portas){
 		this.portas = new Porta[portas];
 		this.totalDePortas = portas;
