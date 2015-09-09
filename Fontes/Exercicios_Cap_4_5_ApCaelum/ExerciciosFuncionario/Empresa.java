@@ -1,29 +1,32 @@
 class Empresa{
-	String nomeDaEmpresa;
+	private String nomeDaEmpresa;
 
-	String cnpj;
+	private String cnpj;
+	Funcionario[] funcionario;
 
-	Funcionario[] funcionario = new Funcionario[3];
+	public Empresa(int numeroDeFuncionarios){
+		this.funcionario = new Funcionario[numeroDeFuncionarios];
+	}
 
 	Funcionario[] funcionarios = new Funcionario[5];
 
 	int contador = 0;
 
-	void setNomeDaEmpresa(String nomeDaEmpresa){
+	public void setNomeDaEmpresa(String nomeDaEmpresa){
 		this.nomeDaEmpresa = nomeDaEmpresa;
 	}
-	String getNomeDaEmpresa(){
+	public String getNomeDaEmpresa(){
 		return this.nomeDaEmpresa;
 	}
 
-	void setCnpj(String cnpj){
+	public void setCnpj(String cnpj){
 		this.cnpj = cnpj;
 	}	
-	String getCnpj(){
+	public String getCnpj(){
 		return this.cnpj;
 	}
 
-	void adicionaFuncionario(Funcionario funcionario){
+	public void adicionaFuncionario(Funcionario funcionario){
 		if(contador < this.funcionario.length) {
 			this.funcionario[contador] = funcionario;
 			contador += 1;
@@ -36,7 +39,7 @@ class Empresa{
 		}
 	}
 
-	boolean contemFuncionario(String funcionario){
+	public boolean contemFuncionario(String funcionario){
 		for (int i=0; i<this.contador;i++) {
 			if (this.funcionario[i].getNomeDoFuncionario() == funcionario) {
 				System.out.println("Contem o fundionario: "+funcionario);
@@ -46,7 +49,7 @@ class Empresa{
 		return false;
 	}
 
-	void mostraFuncionarios(){
+	public void mostraFuncionarios(){
 		if (contador <= this.funcionario.length) {
 			for (int i = 0; i < contador; i++) {
 				System.out.println(" Informações do funcionário: \n");

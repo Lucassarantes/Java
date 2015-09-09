@@ -29,10 +29,13 @@ class TestaFuncionario{
 
 		funcionario.mostra();
 
+		System.out.println(funcionario.getQuantidadeDeFuncionarios());
+
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println(" ");
 
+		System.out.println(funcionario.getBonificacao());
 		/* funcionario1.setNomeDoFuncionario("Lucas");
 
 		funcionario1.setDepartamento("Marketing");

@@ -1,17 +1,33 @@
 class Funcionario{
-	String nomeDoFuncionario;
-	String departamento;
-	double salario;
-	Data dataDeEntrada;
-	String rg;
+	public String nomeDoFuncionario;
+	private String departamento;
+	protected double salario;
+	public Data dataDeEntrada;
+	protected String rg;
+	protected static int quantidadeDeFuncionarios = 0;
 
-	void setNomeDoFuncionario(String nome){
+	public Funcionario(){
+		Funcionario.quantidadeDeFuncionarios = Funcionario.quantidadeDeFuncionarios +1;
+	}
+	public static int getQuantidadeDeFuncionarios(){
+		return Funcionario.quantidadeDeFuncionarios;
+	}
+
+	public Funcionario(String nome){
 		this.nomeDoFuncionario = nome;
 	}
-	void setDepartamento(String departamento){
+
+	public double getBonificacao(){
+		return this.getSalario() *  0.10;
+	}
+
+	public void setNomeDoFuncionario(String nome){
+		this.nomeDoFuncionario = nome;
+	}
+	public void setDepartamento(String departamento){
 		this.departamento = departamento;
 	}
-	void setSalario(double valor){
+	public void setSalario(double valor){
 		if (valor < 0) {
 			System.out.println("Valor inválido.");
 		}else{
@@ -21,35 +37,35 @@ class Funcionario{
 	//void setDataDeEntrada(String data){
 	//	this.dataDeEntrada = data;
 	//}
-	void setRg(String rg){
+	public void setRg(String rg){
 		this.rg = rg;
 	}
-	void recebeAumento(double valor){
+	public void recebeAumento(double valor){
 		if (valor < 0) {
 			System.out.println("Valor inválido.");
 		}else{
 			this.setSalario(this.getSalario()+valor);
 		}
 	}
-	double mostraGanhoAnual(){
+	public double mostraGanhoAnual(){
 		return this.getSalario()*12;
 	}
-	String getNomeDoFuncionario(){
+	public String getNomeDoFuncionario(){
 		return this.nomeDoFuncionario;
 	}
-	String getDepartamento(){
+	public String getDepartamento(){
 		return this.departamento;
 	}
-	double getSalario(){
+	public double getSalario(){
 		return this.salario;
 	}
 	//String getDataDeEntrada(){
 	//	return this.dataDeEntrada;
 	//}
-	String getRg(){
+	public String getRg(){
 		return this.rg;
 	}
-	void mostra(){
+	public void mostra(){
 		System.out.println("Nome do Funcionário: "+this.getNomeDoFuncionario());
 		System.out.println("Departamento que o funcionário trabalha: "+this.getDepartamento());
 		System.out.println("salário do funcionário: "+this.getSalario());

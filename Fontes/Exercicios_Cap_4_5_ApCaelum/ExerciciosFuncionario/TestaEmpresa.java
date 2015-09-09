@@ -1,6 +1,6 @@
 class TestaEmpresa{
 	public static void main(String[] args) {
-		Empresa empresa = new Empresa();
+		Empresa empresa = new Empresa(3);
 		Funcionario funcionario1 = new Funcionario();
 		Funcionario funcionario2 = new Funcionario();
 		Funcionario funcionario3 = new Funcionario();
