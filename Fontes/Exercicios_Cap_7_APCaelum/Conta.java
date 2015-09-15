@@ -1,5 +1,12 @@
 class Conta{
+
 	protected double saldo = 900;
+
+	private static totalDeContas = 0;
+
+	public Conta(){
+		Conta.totalDeContas += 1;
+	}
 
 	public double getSaldo(){
 		return this.saldo;
