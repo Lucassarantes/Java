@@ -50,32 +50,37 @@ public class Byte {
 			this.tipoAConverter = tipoAConverter;
 		}
 		if(this.getTipoAConverter() == 0){
-			System.out.println(this.getBits());
+			System.out.println("Mantido em bits: "+this.getBits());
 		}else{
 			if(this.getTipoAConverter() == 1){
 				this.vByte = this.getBits()/8;
-				System.out.println(this.getvByte());
+				System.out.println("Conversão para Byte: "+this.getvByte());
 			}else {
 				if(this.getTipoAConverter() == 2){
+					this.vByte = this.getBits()/8;
 					this.kilo = this.getvByte()/1024;
-					System.out.println(this.getKilo());
+					System.out.println("Conversão para KiloByte: "+this.getKilo());
 				}else {
 					if(this.getTipoAConverter() == 3){
+						this.vByte = this.getBits()/8;
+						this.kilo = this.getvByte()/1024;
 						this.mega = this.getKilo()/1024;
-						System.out.println(this.getMega());
+						System.out.println("Conversão para MegaByte: "+this.getMega());
 					}else {
-						if(this.getTipoAConverter() == 3){
+						if(this.getTipoAConverter() == 4){
+							this.vByte = this.getBits()/8;
+							this.kilo = this.getvByte()/1024;
+							this.mega = this.getKilo()/1024;
 							this.giga = this.getMega()/1024;
-							System.out.println(this.getGiga());
+							System.out.println("Conversão para GigaByte: "+this.getGiga());
 						}else {
-							if(this.getTipoAConverter() == 3){
+							if(this.getTipoAConverter() == 5){
+								this.vByte = this.getBits()/8;
+								this.kilo = this.getvByte()/1024;
+								this.mega = this.getKilo()/1024;
 								this.giga = this.getMega()/1024;
-								System.out.println(this.getGiga());
-							}else {
-								if(this.getTipoAConverter() == 3){
-									this.tera = this.getGiga()/1024;
-									System.out.println(this.getTera());
-								}
+								this.tera = this.getGiga()/1024;
+								System.out.println("Conversão para TeraByte: "+this.getTera());
 							}
 						}
 					}
