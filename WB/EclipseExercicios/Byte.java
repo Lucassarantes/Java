@@ -1,34 +1,86 @@
 
 public class Byte {
-	private long numero;
-	private double baite = 0;
+	private long bits;
+	private double vByte = 0;
 	private double kilo = 0;
 	private double mega = 0;
 	private double giga = 0;
 	private double tera = 0;
-
-	public Byte(long numeroL){
-		this.setNumero(numeroL);
-	}
-	public long getNumero() {
-		return this.numero;
+	private int tipoAConverter = 0;
+	
+	private int getTipoAConverter() {
+		return tipoAConverter;
 	}
 
-	public void setNumero(long numeroL){
-		if(numeroL <=0){
+	public long getBits() {
+		return this.bits;
+	}
+
+	public void setBits(long numero){
+		if(numero <=0){
 			System.out.println("Quantidade inválida!");
 		}else{
-			this.numero = numeroL;
+			this.bits = numero;
 		}
 	}
-	public String mostraQuantidades(){
-		this.baite = this.numero/8;
-		this.kilo = this.baite/1024;
-		this.mega = this.kilo/1024;
-		this.giga = this.mega/1024;
-		this.tera = this.giga/1024;
-		
-		return "Total de bits: "+this.numero+"\n"+"Total de bytes: "+this.baite+"\n"+"Total de KiloBytes: "+this.kilo+"\n"+"Total de MegaBytes: "+this.mega+"\n"+"Total de GigaBytes: "+this.giga+"\n"+"Total de TeraBytes: "+this.tera;
+	public double getvByte() {
+		return vByte;
+	}
+
+	public double getKilo() {
+		return kilo;
+	}
+
+	public double getMega() {
+		return mega;
+	}
+
+	public double getGiga() {
+		return this.giga;
+	}
+
+	public double getTera() {
+		return this.tera;
 	}
 	
+	public void convertido(int tipoAConverter){
+		if(tipoAConverter <0 || tipoAConverter > 5){
+			System.out.println("Tipo inválido!");
+		}else{
+			this.tipoAConverter = tipoAConverter;
+		}
+		if(this.getTipoAConverter() == 0){
+			System.out.println(this.getBits());
+		}else{
+			if(this.getTipoAConverter() == 1){
+				this.vByte = this.getBits()/8;
+				System.out.println(this.getvByte());
+			}else {
+				if(this.getTipoAConverter() == 2){
+					this.kilo = this.getvByte()/1024;
+					System.out.println(this.getKilo());
+				}else {
+					if(this.getTipoAConverter() == 3){
+						this.mega = this.getKilo()/1024;
+						System.out.println(this.getMega());
+					}else {
+						if(this.getTipoAConverter() == 3){
+							this.giga = this.getMega()/1024;
+							System.out.println(this.getGiga());
+						}else {
+							if(this.getTipoAConverter() == 3){
+								this.giga = this.getMega()/1024;
+								System.out.println(this.getGiga());
+							}else {
+								if(this.getTipoAConverter() == 3){
+									this.tera = this.getGiga()/1024;
+									System.out.println(this.getTera());
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
