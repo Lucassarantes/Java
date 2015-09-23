@@ -9,6 +9,14 @@ public class Edificio extends Imovel {
 		this.totalDePortas +=1;
 	}
 	
+	public int getTotalDeAndares() {
+		return this.totalDeAndares;
+	}
+
+	public void setTotalDeAndares(int totalDeAndares) {
+		this.totalDeAndares = totalDeAndares;
+	}
+
 	public int mostraTotalDePortas(){
 		return Porta.mostraTotalDePortas();
 	}

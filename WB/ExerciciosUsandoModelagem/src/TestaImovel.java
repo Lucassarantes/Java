@@ -15,7 +15,6 @@ public class TestaImovel {
 		edificio.adicionaPorta(porta1);
 		edificio.pinta("Azul");
 		System.out.println(edificio.mostraTotalDePortas());
-		System.out.println(edificio.portas[1].getCor());
+		System.out.println(edificio.portas[0].getCor());
 	}
-
 }
